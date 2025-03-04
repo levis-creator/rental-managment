@@ -3,8 +3,10 @@ import { Icons } from "./Icons";
 
 interface NavItem {
     icon: React.ElementType;  // Change type to React.ElementType for components
-    title: string;
-    path: string;
+    title?: string;
+    path?: string;
+    childPath?:unknown[];
+    collapsible?:boolean;
 }
 
 export const navitems: NavItem[] = [
@@ -52,5 +54,21 @@ export const navitems: NavItem[] = [
         icon: Icons.IoDocumentAttach,
         title: "Payment Transfers",
         path: "/payment-transfers"
+    },
+    {
+        icon: Icons.IoDocuments,
+        title: "Reports",
+        collapsible:true,
+        childPath:[
+            {
+                title: "Payments",
+                path: "/reports/payments"
+            },
+            {
+                title: "Arrears",
+                path: "/reports/arrears"
+            },
+        ]
     }
+
 ];

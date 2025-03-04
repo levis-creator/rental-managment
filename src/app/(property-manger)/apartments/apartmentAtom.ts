@@ -3,4 +3,5 @@ import { atom } from "jotai";
 
 export const apartments= atom<Apartment[]>([])
 export const apartment=atom<Apartment>()
+export const pageTitle=atom("Apartment")
 

@@ -10,9 +10,9 @@ export default function SelectInput({
   }: {
     label: string;
     name: string;
-    register: any;
+    register: unknown;
     className?: string;
-    options: any[];
+    options: unknown[];
     display:string;
     multiple?: boolean;
     value?:string;

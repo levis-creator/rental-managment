@@ -20,8 +20,8 @@ type InputType =
 const TextInput: React.FC<{
   label: string;
   name: string;
-  register: any;
-  errors: any;
+  register: unknown;
+  errors: unknown;
   isRequired?: boolean;
   type?: InputType;
   className?: string;

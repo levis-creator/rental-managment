@@ -1,82 +1,141 @@
-import React, { useCallback, useEffect } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
+"use client";
 import { useAtom, useAtomValue, useSetAtom } from 'jotai';
+import React, { useCallback, useEffect } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 
+import SelectInput from '@/components/form/SelectInput';
 import TextInput from '@/components/form/TextInput';
 import FormModal from '@/components/FormModal';
 import { API_URL, ENDPOINTS } from '@/constants/ApiUrls';
 import { fetchData } from '@/lib/db_operations';
-import { Apartment, Unit } from '@/lib/types';
-import { unit, units } from './unitAtoms';
 import { UnitStatus } from '@/lib/status';
+import { Apartment, Unit } from '@/lib/types';
 import { apartments } from '../apartments/apartmentAtom';
-import SelectInput from '@/components/form/SelectInput';
-import { enumToArray } from '@/lib/EnumToArray';
+import { pageTitle, unit, units } from './unitAtoms'; // Import pageTitle
 
-interface unitFormProps {
+interface UnitFormProps {
     edit?: boolean;
     head: string;
     handleClose: () => void;
 }
 
-const UnitForm: React.FC<unitFormProps> = ({ edit = false, head, handleClose }) => {
+const UnitForm: React.FC<UnitFormProps> = ({ edit = false, head, handleClose }) => {
     const unitEdit = useAtomValue(unit);
     const refreshData = useSetAtom(units);
-    const statusOptions= enumToArray(UnitStatus)
-    const [apartmentData, setApartmentData] = useAtom(apartments)
+    const [apartmentData, setApartmentData] = useAtom(apartments);
+    const pageHead = useAtomValue(pageTitle); // Use pageTitle atom
+
     const {
         register,
         reset,
-        formState: { errors },
         handleSubmit,
+        formState: { errors, isSubmitting },
     } = useForm<Unit>({
-        defaultValues: unitEdit || { apartmentId: 0, status: UnitStatus.Available, unitNumber: '', id: undefined }, // Ensure default values
+        defaultValues: unitEdit || { apartmentId: 0, status: UnitStatus.Available, unitNumber: '', id: undefined },
     });
 
-    // Reset form when the modal opens
+    // Fetch apartments if not already loaded
     useEffect(() => {
-        if (apartmentData.length == 0) {
-            fetchData(API_URL.EXTERNAL_API_URL as string + ENDPOINTS.APARTMENT).then(
-                (dataItems) => {
-                    setApartmentData(dataItems as Apartment[])
-                }
-            )
+        if (apartmentData.length === 0) {
+            fetchData<Apartment[]>(`${API_URL.EXTERNAL_API_URL}${ENDPOINTS.APARTMENT}`)
+                .then((dataItems) => {
+                    if (dataItems) {
+                        setApartmentData(dataItems);
+                    } else {
+                        toast.error('No apartments found');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Failed to fetch apartments:', error);
+                    toast.error('Failed to load apartments');
+                });
         }
-        console.log("finite")
-        reset(unitEdit || { apartmentId: 0, status: UnitStatus.Available, unitNumber: '', id: undefined });
-    }, [unitEdit, reset, apartmentData, setApartmentData]);
+    }, [apartmentData, setApartmentData]);
 
-    // Function to handle form submission
+    // Reset form when the modal opens or when `unitEdit` changes
+    useEffect(() => {
+        reset(unitEdit || { apartmentId: 0, status: UnitStatus.Available, unitNumber: '', id: undefined });
+    }, [unitEdit, reset]);
+
+    // Fetch latest data from the API
+    const fetchLatestData = useCallback(async () => {
+        try {
+            const dataItems = await fetchData<Unit[]>(`${API_URL.EXTERNAL_API_URL}${ENDPOINTS.UNIT_SUMMARY}`);
+            if (dataItems) {
+                refreshData(dataItems);
+            } else {
+                toast.error('No units found');
+            }
+        } catch (error) {
+            console.error('Failed to fetch units:', error);
+            toast.error('Failed to load units');
+        }
+    }, [refreshData]);
+
+    // Handle form submission
     const onSubmit: SubmitHandler<Unit> = useCallback(
         async (data) => {
             try {
                 const url = `${API_URL.EXTERNAL_API_URL}${ENDPOINTS.UNIT}${edit ? `/${unitEdit?.id}` : ''}`;
                 const method = edit ? 'PUT' : 'POST';
 
-                await fetchData<Unit>(url, { method, body: data });
+                const response = await fetchData<Unit>(url, { method, body: data });
 
-                refreshData((items) => (edit ? items.map((item) => (item.id === data.id ? data : item)) : [...items, data]));
-                toast.success(edit ? 'Edited  successfully' : 'Added  successfully');
-                handleClose();
-            } catch {
-                toast.error(edit ? 'Unable to edit ' : 'Unable to add ');
+                // Handle 204 No Content response
+                if (response === null) {
+                    // For 204 responses, assume the operation was successful
+                    await fetchLatestData(); // Refresh data from the API
+                    toast.success(`${head} ${pageHead} successfully`); // Use pageHead
+                    handleClose();
+                } else {
+                    // For responses with a body, use the returned data
+                    await fetchLatestData(); // Refresh data from the API
+                    toast.success(`${head} ${pageHead} successfully`); // Use pageHead
+                    handleClose();
+                }
+            } catch (error: unknown) {
+                if (error instanceof Error) {
+                    toast.error(`Unable to ${edit ? 'edit' : 'add'} ${pageHead}: ${error.message}`); // Use pageHead
+                } else {
+                    toast.error(`Unable to ${edit ? 'edit' : 'add'} ${pageHead}`); // Use pageHead
+                }
             }
         },
-        [edit, unitEdit, refreshData, handleClose]
+        [edit, unitEdit, handleClose, head, pageHead, fetchLatestData] // Include fetchLatestData in dependencies
     );
 
     return (
-        <FormModal title={head} handleClose={handleClose}>
-            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full max-w-4xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto my-3">
+        <FormModal title={`${head} ${pageHead}`} handleClose={handleClose}> {/* Use pageHead */}
+            <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="flex flex-col w-full max-w-4xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto my-3"
+            >
                 <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
-                    <TextInput name="unitNumber" label="Unit Number" register={register} errors={errors} />
-                    <SelectInput display='apartmentName' options={apartmentData} name='apartmentId' label='Apartment Name' register={register} />
-                    <SelectInput display='name' options={statusOptions} name='status' label='Status' register={register} />
+                    <TextInput
+                        name="unitNumber"
+                        label="Unit Number"
+                        register={register}
+                        errors={errors}
+                        aria-invalid={errors.unitNumber ? 'true' : 'false'}
+                    />
+                    <SelectInput
+                        display="apartmentName"
+                        options={apartmentData}
+                        name="apartmentId"
+                        label="Apartment Name"
+                        register={register}
+                        aria-invalid={errors.apartmentId ? 'true' : 'false'}
+                    />
+                  
                 </div>
 
-                <button type="submit" className="mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                    {edit ? 'Edit' : 'Add'}
+                <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                    {isSubmitting ? 'Submitting...' : edit ? 'Save Changes' : `Add ${pageHead}`} {/* Use pageHead */}
                 </button>
             </form>
         </FormModal>

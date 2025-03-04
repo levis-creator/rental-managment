@@ -3,4 +3,5 @@ import { atom } from "jotai";
 
 export const units= atom<Unit[]>([])
 export const unit=atom<Unit>()
+export const pageTitle=atom("Unit")
 
