@@ -140,7 +140,7 @@ const ContactSection = () => {
                 >
                 <textarea
                   name="message"
-                  rows="1"
+                  rows={1}
                   placeholder="type your message here"
                   className="w-full resize-none border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-body-color placeholder:text-body-color/60 focus:border-primary focus:outline-hidden dark:border-dark-3 dark:text-dark-6"
                 ></textarea>
