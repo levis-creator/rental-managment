@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const BrandSection = () => {
@@ -8,60 +9,60 @@ const BrandSection = () => {
         className="flex flex-wrap items-center justify-center gap-8 -mx-4 xl:gap-11"
       >
         <a href="https://graygrids.com/">
-          <img
+          <Image
             src="./assets/images/brands/graygrids.svg"
             alt="graygrids"
             className="dark:hidden"
           />
-          <img
+          <Image
             src="./assets/images/brands/graygrids-white.svg"
             alt="graygrids"
             className="hidden dark:block"
           />
         </a>
         <a href="https://lineicons.com/">
-          <img
+          <Image
             src="./assets/images/brands/lineicons.svg"
             alt="lineicons"
             className="dark:hidden"
           />
-          <img
+          <Image
             src="./assets/images/brands/lineicons-white.svg"
             alt="graygrids"
             className="hidden dark:block"
           />
         </a>
         <a href="https://uideck.com/">
-          <img
+          <Image
             src="./assets/images/brands/uideck.svg"
             alt="uideck"
             className="dark:hidden"
           />
-          <img
+          <Image
             src="./assets/images/brands/uideck-white.svg"
             alt="graygrids"
             className="hidden dark:block"
           />
         </a>
         <a href="https://ayroui.com/">
-          <img
+          <Image
             src="./assets/images/brands/ayroui.svg"
             alt="ayroui"
             className="dark:hidden"
           />
-          <img
+          <Image
             src="./assets/images/brands/ayroui-white.svg"
             alt="graygrids"
             className="hidden dark:block"
           />
         </a>
         <a href="https://tailgrids.com/">
-          <img
+          <Image
             src="./assets/images/brands/tailgrids.svg"
             alt="tailgrids"
             className="dark:hidden"
           />
-          <img
+          <Image
             src="./assets/images/brands/tailgrids-white.svg"
             alt="graygrids"
             className="hidden dark:block"

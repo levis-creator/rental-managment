@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const Testimonial = () => {
@@ -34,23 +35,23 @@ const Testimonial = () => {
                 className="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]"
               >
                 <div className="mb-[18px] flex items-center gap-[2px]">
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
@@ -63,7 +64,7 @@ const Testimonial = () => {
 
                 <a href="#" className="flex items-center gap-4">
                   <div className="h-[50px] w-[50px] overflow-hidden rounded-full">
-                    <img
+                    <Image
                       src="/assets/images/testimonials/author-01.jpg"
                       alt="author"
                       className="h-[50px] w-[50px] overflow-hidden rounded-full"
@@ -87,23 +88,23 @@ const Testimonial = () => {
                 className="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]"
               >
                 <div className="mb-[18px] flex items-center gap-[2px]">
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
@@ -116,7 +117,7 @@ const Testimonial = () => {
 
                 <a href="#" className="flex items-center gap-4">
                   <div className="h-[50px] w-[50px] overflow-hidden rounded-full">
-                    <img
+                    <Image
                       src="/assets/images/testimonials/author-02.jpg"
                       alt="author"
                       className="h-[50px] w-[50px] overflow-hidden rounded-full"
@@ -142,23 +143,23 @@ const Testimonial = () => {
                 className="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]"
               >
                 <div className="mb-[18px] flex items-center gap-[2px]">
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
@@ -171,7 +172,7 @@ const Testimonial = () => {
 
                 <a href="#" className="flex items-center gap-4">
                   <div className="h-[50px] w-[50px] overflow-hidden rounded-full">
-                    <img
+                    <Image
                       src="/assets/images/testimonials/author-03.jpg"
                       alt="author"
                       className="h-[50px] w-[50px] overflow-hidden rounded-full"
@@ -197,23 +198,23 @@ const Testimonial = () => {
                 className="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]"
               >
                 <div className="mb-[18px] flex items-center gap-[2px]">
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
@@ -226,7 +227,7 @@ const Testimonial = () => {
 
                 <a href="#" className="flex items-center gap-4">
                   <div className="h-[50px] w-[50px] overflow-hidden rounded-full">
-                    <img
+                    <Image
                       src="/assets/images/testimonials/author-01.jpg"
                       alt="author"
                       className="h-[50px] w-[50px] overflow-hidden rounded-full"
@@ -250,23 +251,23 @@ const Testimonial = () => {
                 className="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]"
               >
                 <div className="mb-[18px] flex items-center gap-[2px]">
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
@@ -279,7 +280,7 @@ const Testimonial = () => {
 
                 <a href="#" className="flex items-center gap-4">
                   <div className="h-[50px] w-[50px] overflow-hidden rounded-full">
-                    <img
+                    <Image
                       src="/assets/images/testimonials/author-02.jpg"
                       alt="author"
                       className="h-[50px] w-[50px] overflow-hidden rounded-full"
@@ -305,23 +306,23 @@ const Testimonial = () => {
                 className="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]"
               >
                 <div className="mb-[18px] flex items-center gap-[2px]">
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
-                  <img
+                  <Image
                     src="/assets/images/testimonials/icon-star.svg"
                     alt="star icon"
                   />
@@ -334,7 +335,7 @@ const Testimonial = () => {
 
                 <a href="#" className="flex items-center gap-4">
                   <div className="h-[50px] w-[50px] overflow-hidden rounded-full">
-                    <img
+                    <Image
                       src="/assets/images/testimonials/author-03.jpg"
                       alt="author"
                       className="h-[50px] w-[50px] overflow-hidden rounded-full"

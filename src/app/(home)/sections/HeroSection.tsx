@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -200,7 +201,9 @@ const HeroSection = () => {
               data-wow-delay=".25s"
             >
               <div className="mt-16">
-                <img
+                <Image
+                width={0}
+                height={0}
                   src="/assets/images/hero/hero-image.jpg"
                   alt="hero"
                   className="max-w-full mx-auto rounded-t-xl rounded-tr-xl"

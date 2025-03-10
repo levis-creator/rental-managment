@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const AboutSection = () => {
@@ -45,7 +46,7 @@ const AboutSection = () => {
                   <div
                     className="mb-4 sm:mb-8 sm:h-[400px] md:h-[540px] lg:h-[400px] xl:h-[500px]"
                   >
-                    <img
+                    <Image
                       src="./assets/images/about/about-image-01.jpg"
                       alt="about image"
                       className="object-cover object-center w-full h-full"
@@ -57,7 +58,7 @@ const AboutSection = () => {
                   <div
                     className="mb-4 sm:mb-8 sm:h-[220px] md:h-[346px] lg:mb-4 lg:h-[225px] xl:mb-8 xl:h-[310px]"
                   >
-                    <img
+                    <Image
                       src="./assets/images/about/about-image-02.jpg"
                       alt="about image"
                       className="object-cover object-center w-full h-full"

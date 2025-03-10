@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const BlogSection = () => {
@@ -27,7 +28,7 @@ const BlogSection = () => {
             <div className="mb-10 wow fadeInUp group" data-wow-delay=".1s">
               <div className="mb-8 overflow-hidden rounded-[5px]">
                 <a href="blog-details.html" className="block">
-                  <img
+                  <Image
                     src="./assets/images/blog/blog-01.jpg"
                     alt="image"
                     className="w-full transition group-hover:rotate-6 group-hover:scale-125"
@@ -61,7 +62,7 @@ const BlogSection = () => {
             <div className="mb-10 wow fadeInUp group" data-wow-delay=".15s">
               <div className="mb-8 overflow-hidden rounded-[5px]">
                 <a href="blog-details.html" className="block">
-                  <img
+                  <Image
                     src="./assets/images/blog/blog-02.jpg"
                     alt="image"
                     className="w-full transition group-hover:rotate-6 group-hover:scale-125"
@@ -95,7 +96,7 @@ const BlogSection = () => {
             <div className="mb-10 wow fadeInUp group" data-wow-delay=".2s">
               <div className="mb-8 overflow-hidden rounded-[5px]">
                 <a href="blog-details.html" className="block">
-                  <img
+                  <Image
                     src="./assets/images/blog/blog-03.jpg"
                     alt="image"
                     className="w-full transition group-hover:rotate-6 group-hover:scale-125"

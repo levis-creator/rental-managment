@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const FooterSection = () => {
@@ -14,7 +15,7 @@ const FooterSection = () => {
               href="javascript:void(0)"
               className="mb-6 inline-block max-w-[160px]"
             >
-              <img
+              <Image
                 src="assets/images/logo/logo-white.svg"
                 alt="logo"
                 className="max-w-full"
@@ -230,7 +231,7 @@ const FooterSection = () => {
                 className="group flex items-center gap-[22px]"
               >
                 <div className="overflow-hidden rounded-sm">
-                  <img
+                  <Image
                     src="./assets/images/blog/blog-footer-01.jpg"
                     alt="blog"
                   />
@@ -246,7 +247,7 @@ const FooterSection = () => {
                 className="group flex items-center gap-[22px]"
               >
                 <div className="overflow-hidden rounded-sm">
-                  <img
+                  <Image
                     src="./assets/images/blog/blog-footer-02.jpg"
                     alt="blog"
                   />
@@ -313,11 +314,11 @@ const FooterSection = () => {
 
     <div>
       <span className="absolute left-0 top-0 z-[-1]">
-        <img src="assets/images/footer/shape-1.svg" alt="" />
+        <Image width={0} height={0} src="assets/images/footer/shape-1.svg" alt="" />
       </span>
 
       <span className="absolute bottom-0 right-0 z-[-1]">
-        <img src="assets/images/footer/shape-3.svg" alt="" />
+        <Image width={0} height={0} src="assets/images/footer/shape-3.svg" alt="" />
       </span>
 
       <span className="absolute right-0 top-0 z-[-1]">

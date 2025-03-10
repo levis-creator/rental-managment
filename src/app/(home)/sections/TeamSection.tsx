@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const TeamSection = () => {
@@ -31,7 +32,7 @@ const TeamSection = () => {
             className="px-5 pt-12 pb-10 mb-8 bg-white group rounded-xl shadow-testimonial dark:bg-dark dark:shadow-none"
           >
             <div className="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
-              <img
+              <Image
                 src="./assets/images/team/team-01.png"
                 alt="team image"
                 className="h-[120px] w-[120px] rounded-full"
@@ -343,7 +344,7 @@ const TeamSection = () => {
             className="px-5 pt-12 pb-10 mb-8 bg-white group rounded-xl shadow-testimonial dark:bg-dark dark:shadow-none"
           >
             <div className="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
-              <img
+              <Image
                 src="https://cdn.tailgrids.com/1.0/assets/images/team/image-07/image-02.png"
                 alt="team image"
                 className="h-[120px] w-[120px] rounded-full"
@@ -547,7 +548,7 @@ const TeamSection = () => {
             className="px-5 pt-12 pb-10 mb-8 bg-white group rounded-xl shadow-testimonial dark:bg-dark dark:shadow-none"
           >
             <div className="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
-              <img
+              <Image
                 src="https://cdn.tailgrids.com/1.0/assets/images/team/image-07/image-03.png"
                 alt="team image"
                 className="h-[120px] w-[120px] rounded-full"
@@ -751,7 +752,7 @@ const TeamSection = () => {
             className="px-5 pt-12 pb-10 mb-8 bg-white group rounded-xl shadow-testimonial dark:bg-dark dark:shadow-none"
           >
             <div className="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
-              <img
+              <Image
                 src="https://cdn.tailgrids.com/1.0/assets/images/team/image-07/image-04.png"
                 alt="team image"
                 className="h-[120px] w-[120px] rounded-full"
