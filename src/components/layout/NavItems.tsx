@@ -1,7 +1,7 @@
 import { Icons } from "./Icons";
 
 
-interface NavItem {
+export interface NavItem {
     icon: React.ElementType;  // Change type to React.ElementType for components
     title?: string;
     path?: string;
