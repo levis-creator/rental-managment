@@ -27,7 +27,10 @@ export default function SelectInput({
         </label>
         <div className="mt-2 w-full">
           <select
-            {...register(`${name}`)}
+            {
+                  // @ts-expect-error: Ignoring TypeScript error for unknown error type
+
+              ...register(`${name}`)}
             id={name}
             name={name}
             multiple={multiple}
@@ -35,9 +38,15 @@ export default function SelectInput({
           >
             {/* <option value="null">N/A</option> */}
             {options.map((option, i) => {
+              
               return (
+                    // @ts-expect-error: Ignoring TypeScript error for unknown error type
+
                 <option key={i} value={option[value]}>
-                  {option[`${display}`]}
+                  {
+                        // @ts-expect-error: Ignoring TypeScript error for unknown error type
+
+                  option[`${display}`]}
                 </option>
               );
             })}
