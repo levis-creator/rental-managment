@@ -20,13 +20,13 @@ const AboutSection = () => {
                 <p
                   className="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6"
                 >
-                  The main ‘thrust' is to focus on educating attendees on how to
+                  The main ‘thrust&apos; is to focus on educating attendees on how to
                   best protect highly vulnerable business applications with
                   interactive panel discussions and roundtables led by subject
                   matter experts.
                   <br />
                   <br />
-                  The main ‘thrust' is to focus on educating attendees on how to
+                  The main ‘thrust&apos; is to focus on educating attendees on how to
                   best protect highly vulnerable business applications with
                   interactive panel.
                 </p>

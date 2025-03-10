@@ -58,8 +58,8 @@ const Testimonial = () => {
                 </div>
 
                 <p className="mb-6 text-base text-body-color dark:text-dark-6">
-                  “Our members are so impressed. It's intuitive. It's clean.
-                  It's distraction free. If you're building a community.’’
+                  “Our members are so impressed. It&apos;s intuitive. It&apos;s clean.
+                  It&apos;s distraction free. If you&apos;re building a community.’’
                 </p>
 
                 <a href="#" className="flex items-center gap-4">
@@ -111,8 +111,8 @@ const Testimonial = () => {
                 </div>
 
                 <p className="mb-6 text-base text-body-color dark:text-dark-6">
-                  “Our members are so impressed. It's intuitive. It's clean.
-                  It's distraction free. If you're building a community.’’
+                  “Our members are so impressed. It&apos;s intuitive. It&apos;s clean.
+                  It&apos;s distraction free. If you&apos;re building a community.’’
                 </p>
 
                 <a href="#" className="flex items-center gap-4">
@@ -166,8 +166,8 @@ const Testimonial = () => {
                 </div>
 
                 <p className="mb-6 text-base text-body-color dark:text-dark-6">
-                  “Our members are so impressed. It's intuitive. It's clean.
-                  It's distraction free. If you're building a community.’’
+                  “Our members are so impressed. It&apos;s intuitive. It&apos;s clean.
+                  It&apos;s distraction free. If you&apos;re building a community.’’
                 </p>
 
                 <a href="#" className="flex items-center gap-4">
@@ -221,8 +221,8 @@ const Testimonial = () => {
                 </div>
 
                 <p className="mb-6 text-base text-body-color dark:text-dark-6">
-                  “Our members are so impressed. It's intuitive. It's clean.
-                  It's distraction free. If you're building a community.’’
+                  “Our members are so impressed. It&apos;s intuitive. It&apos;s clean.
+                  It&apos;s distraction free. If you&apos;re building a community.’’
                 </p>
 
                 <a href="#" className="flex items-center gap-4">
@@ -274,8 +274,8 @@ const Testimonial = () => {
                 </div>
 
                 <p className="mb-6 text-base text-body-color dark:text-dark-6">
-                  “Our members are so impressed. It's intuitive. It's clean.
-                  It's distraction free. If you're building a community.’’
+                  “Our members are so impressed. It&apos;s intuitive. It&apos;s clean.
+                  It&apos;s distraction free. If you&apos;re building a community.’’
                 </p>
 
                 <a href="#" className="flex items-center gap-4">
@@ -329,8 +329,8 @@ const Testimonial = () => {
                 </div>
 
                 <p className="mb-6 text-base text-body-color dark:text-dark-6">
-                  “Our members are so impressed. It's intuitive. It's clean.
-                  It's distraction free. If you're building a community.’’
+                  “Our members are so impressed. It&apos;s intuitive. It&apos;s clean.
+                  It&apos;s distraction free. If you&apos;re building a community.’’
                 </p>
 
                 <a href="#" className="flex items-center gap-4">
