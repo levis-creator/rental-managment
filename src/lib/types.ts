@@ -39,7 +39,7 @@ export interface LeaseAgreement {
     startDate: string;
     endDate: string;
     rentAmount: number;
-    status?: LeaseStatus;
+    status?: LeaseStatus|null;
     statusDescription?: string
 }
 export interface Invoice {

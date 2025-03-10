@@ -1,17 +1,16 @@
 "use client";
 import DeleteModal from "@/components/DeleteModal";
+import PageHead from "@/components/PageHead";
+import { DataTable } from "@/components/reports/data-table";
 import { API_URL, ENDPOINTS } from "@/constants/ApiUrls";
-import { fetchData } from "@/lib/db_operations";
 import { PropertyOwner } from "@/lib/types";
 import { useAtom, useAtomValue, useSetAtom } from "jotai";
-import { useEffect, useState, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import 'react-data-grid/lib/styles.css';
 import toast from "react-hot-toast";
+import { getColumns } from "./column";
 import { pageTitle, propertyOwner, propertyOwners } from "./propertyOwnerAtoms";
 import PropertyOwnerForm from "./PropertyOwnerForm";
-import { DataTable } from "@/components/reports/data-table";
-import { getColumns } from "./column";
-import PageHead from "@/components/PageHead";
 
 const PropertyOwnerTable = ({ dataItems }: { dataItems: PropertyOwner[] }) => {
     const [openDeleteModal, setDeleteModal] = useState(false);

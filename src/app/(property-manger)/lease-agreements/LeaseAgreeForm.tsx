@@ -31,7 +31,7 @@ const LeaseAgreementForm: React.FC<LeaseAgreementFormProps> = ({ edit = false, h
     const [unitData, setUnitData] = useAtom(units);
     const pageHead = useAtomValue(pageTitle);
     const [isSubmitting, setIsSubmitting] = useState(false);
-
+    console.log(statusOptions)
     const {
         register,
         reset,
@@ -96,12 +96,11 @@ const LeaseAgreementForm: React.FC<LeaseAgreementFormProps> = ({ edit = false, h
             toast.error("Start Date must be earlier than End Date");
             return;
         }
-
+    
         setIsSubmitting(true);
         try {
             const url = `${API_URL.EXTERNAL_API_URL}${ENDPOINTS.LEASE_AGREEMENT}${edit ? `/${leaseAgreementEdit?.id}` : ""}`;
             const method = edit ? "PUT" : "POST";
-
             await fetchData<LeaseAgreement>(url, { method, body: data });
             await fetchLatestData();
             toast.success(`${head} ${pageHead} successfully`);
@@ -123,7 +122,7 @@ const LeaseAgreementForm: React.FC<LeaseAgreementFormProps> = ({ edit = false, h
                     <TextInput name="startDate" label="Start Date" register={register} errors={errors} type="date"  />
                     <TextInput name="endDate" label="End Date" register={register} errors={errors} type="date"  />
                     <TextInput name="rentAmount" label="Rent Amount" register={register} errors={errors} type="number"  />
-                    <SelectInput display="name" options={statusOptions} value="value" name="status" label="Status" register={register}  />
+                    <SelectInput display="name" options={statusOptions} value="id" name="status" label="Status" register={register}  />
                 </div>
                 <button type="submit" disabled={isSubmitting} className="mt-4 bg-blue-700 text-white rounded-lg px-5 py-2.5 disabled:opacity-50 disabled:cursor-not-allowed">
                     {isSubmitting ? "Submitting..." : edit ? "Save Changes" : `Add ${pageHead}`}
